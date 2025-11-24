@@ -1,0 +1,11 @@
+interface GigabitEthernet0/3
+ no shutdown
+ ip address 192.168.58.1 255.255.255.0
+ description Link to LAN Segment B
+ bandwidth 128000
+ exit
+router eigrp 10
+ network 192.168.58.0 0.0.0.255
+ passive-interface default
+ no passive-interface GigabitEthernet0/3
+
